@@ -21,4 +21,11 @@ const divide = function(...array) {
 
 
 
-// Function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers
+// Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
+
+const operate = function(num1, num2, operator) {
+  operator;
+  let result = add(num1, num2);
+  return result;
+};
+
