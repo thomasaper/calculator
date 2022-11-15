@@ -1,6 +1,6 @@
 // Basic math functions
 
-const sum = function(...array) {
+const add = function(...array) {
   return array.reduce((a, b) => a + b);  
 };
 
@@ -19,16 +19,6 @@ const divide = function(...array) {
   return array.reduce((a, b) => a / b);
 };
 
-const power = function(a, b) {
-  return Math.pow(a, b);
-};
 
 
-const factorial = function(a) {
-  if (a === 0 || a === 1) return 1;
-  for (let i = a - 1; i >= 1; i--){
-    a*=i;
-  };
-  return a;
-};
-
+// Function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers
