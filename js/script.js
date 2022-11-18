@@ -32,6 +32,7 @@ const operate = function(operator, num1, num2) {
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 
 let displayValue = [];
+
 const input = document.querySelector('#input');
 
 const buttons = document.querySelectorAll('button');
@@ -40,6 +41,36 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     input.innerHTML = button.id;
   });
+});
+
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+  input.innerHTML = '';
+});
+
+const btnDivide = document.querySelector('.btnDivide');
+btnDivide.addEventListener('click', () => {
+  input.innerHTML = "/";
+});
+
+const btnPlus = document.querySelector('.btnPlus');
+btnPlus.addEventListener('click', () => {
+  input.innerHTML = "+";
+});
+
+const btnMinus = document.querySelector('.btnMinus');
+btnMinus.addEventListener('click', () => {
+  input.innerHTML = "-";
+});
+
+const btnMultiply = document.querySelector('.btnMultiply');
+btnMultiply.addEventListener('click', () => {
+  input.innerHTML = "*";
+});
+
+const btnEqual = document.querySelector('.btnEqual');
+btnEqual.addEventListener('click', () => {
+  input.innerHTML = "result";
 });
 
 
