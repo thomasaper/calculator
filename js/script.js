@@ -23,6 +23,10 @@ const divide = function(...array) {
 
 // Step 2: Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
 
+let operator = '';
+let num1 = 0;
+let num2 = 0;
+
 const operate = function(operator, num1, num2) {
   return operator(num1,num2)
 };
@@ -32,17 +36,25 @@ const operate = function(operator, num1, num2) {
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 
 let displayValue = 0;
-let operator = '';
+
+
 
 const input = document.querySelector('#input');
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     input.innerHTML = button.id;
     displayValue = button.id;
+    
+    if (operator == '') {
+      num1 = button.id;
+    } else {
+      num2 = button.id;
+    };
   });
+
 });
 
 const clear = document.querySelector('.clear');
