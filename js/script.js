@@ -98,3 +98,9 @@ btnEqual.addEventListener('click', () => {
 // Step 4: Make the calculator work! You’ll need to store the first number that is input into the calculator 
 // when a user presses an operator, and also save which operation has been chosen and then operate() on 
 // them when the user presses the “=” key.
+
+if (operator === '+') {
+  let result = operate(add, num1, num2);
+  input.innerHTML = result;
+
+}
