@@ -35,9 +35,11 @@ const operate = function(operator, num1, num2) {
 //  Step 3: Create the functions that populate the display when you click the number buttons. 
 // You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 
+// Step 4: Make the calculator work! You’ll need to store the first number that is input into the calculator 
+// when a user presses an operator, and also save which operation has been chosen and then operate() on 
+// them when the user presses the “=” key.
+
 let displayValue = 0;
-
-
 
 const input = document.querySelector('#input');
 
@@ -50,8 +52,10 @@ buttons.forEach((button) => {
     
     if (operator == '') {
       num1 = button.id;
+      console.log(num1)
     } else {
       num2 = button.id;
+      console.log(num2)
     };
   });
 
@@ -62,45 +66,61 @@ clear.addEventListener('click', () => {
   input.innerHTML = '';
   operator = "";
   displayValue = 0;
+  console.log(operator);
 });
 
 const btnDivide = document.querySelector('.btnDivide');
 btnDivide.addEventListener('click', () => {
   input.innerHTML = "/";
   operator = "/";
+  console.log(operator);
 });
 
 const btnPlus = document.querySelector('.btnPlus');
 btnPlus.addEventListener('click', () => {
   input.innerHTML = "+";
   operator = "+";
+  console.log(operator);
 });
 
 const btnMinus = document.querySelector('.btnMinus');
 btnMinus.addEventListener('click', () => {
   input.innerHTML = "-";
   operator = "-";
+  console.log(operator);
 });
 
 const btnMultiply = document.querySelector('.btnMultiply');
 btnMultiply.addEventListener('click', () => {
   input.innerHTML = "*";
   operator = "*";
+  console.log(operator);
 });
 
 const btnEqual = document.querySelector('.btnEqual');
 btnEqual.addEventListener('click', () => {
-  input.innerHTML = "result";
-  operator = "=";
+  if (operator === '/') {
+    let result = operate(divide, num1, num2);
+    input.innerHTML = result;
+    console.log(result);
+    console.log(typeof(result));
+  } else if ( operator === '+'){
+    let result = operate(add, num1, num2);
+    input.innerHTML = result;
+    console.log(result);
+    console.log(typeof(result));
+  } else if ( operator === '-'){
+    let result = operate(subtract, num1, num2);
+    input.innerHTML = result;
+    console.log(result);
+    console.log(typeof(result));
+  } else if ( operator === '*'){
+    let result = operate(multiply, num1, num2);
+    input.innerHTML = result;
+    console.log(result);
+    console.log(typeof(result));
+  }
 });
 
 
-// Step 4: Make the calculator work! You’ll need to store the first number that is input into the calculator 
-// when a user presses an operator, and also save which operation has been chosen and then operate() on 
-// them when the user presses the “=” key.
 
-if (operator === '+') {
-  let result = operate(add, num1, num2);
-  input.innerHTML = result;
-
-}
