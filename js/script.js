@@ -28,7 +28,7 @@ let num1 = 0;
 let num2 = 0;
 
 const operate = function(operator, num1, num2) {
-  return operator(num1,num2)
+  return operator(parseInt(num1),parseInt(num2))
 };
 
 
@@ -52,10 +52,8 @@ buttons.forEach((button) => {
     
     if (operator == '') {
       num1 = button.id;
-      console.log(num1)
     } else {
       num2 = button.id;
-      console.log(num2)
     };
   });
 
@@ -66,35 +64,30 @@ clear.addEventListener('click', () => {
   input.innerHTML = '';
   operator = "";
   displayValue = 0;
-  console.log(operator);
 });
 
 const btnDivide = document.querySelector('.btnDivide');
 btnDivide.addEventListener('click', () => {
   input.innerHTML = "/";
   operator = "/";
-  console.log(operator);
 });
 
 const btnPlus = document.querySelector('.btnPlus');
 btnPlus.addEventListener('click', () => {
   input.innerHTML = "+";
   operator = "+";
-  console.log(operator);
 });
 
 const btnMinus = document.querySelector('.btnMinus');
 btnMinus.addEventListener('click', () => {
   input.innerHTML = "-";
   operator = "-";
-  console.log(operator);
 });
 
 const btnMultiply = document.querySelector('.btnMultiply');
 btnMultiply.addEventListener('click', () => {
   input.innerHTML = "*";
   operator = "*";
-  console.log(operator);
 });
 
 const btnEqual = document.querySelector('.btnEqual');
@@ -102,23 +95,15 @@ btnEqual.addEventListener('click', () => {
   if (operator === '/') {
     let result = operate(divide, num1, num2);
     input.innerHTML = result;
-    console.log(result);
-    console.log(typeof(result));
   } else if ( operator === '+'){
     let result = operate(add, num1, num2);
     input.innerHTML = result;
-    console.log(result);
-    console.log(typeof(result));
   } else if ( operator === '-'){
     let result = operate(subtract, num1, num2);
-    input.innerHTML = result;
-    console.log(result);
-    console.log(typeof(result));
+    input.innerHTML = result;;
   } else if ( operator === '*'){
     let result = operate(multiply, num1, num2);
     input.innerHTML = result;
-    console.log(result);
-    console.log(typeof(result));
   }
 });
 
