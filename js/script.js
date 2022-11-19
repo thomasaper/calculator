@@ -1,4 +1,23 @@
-// Step 1: Basic math functions
+/* 
+
+Step 1: Create basic math functions
+
+Step 2: Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
+
+Step 3: Create the functions that populate the display when you click the number buttons. 
+        You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+
+Step 4: Make the calculator work! You’ll need to store the first number that is input into the calculator 
+        when a user presses an operator, and also save which operation has been chosen and then operate() on 
+        them when the user presses the “=” key.
+
+Step 5: Users should be able to string together several operations and get the right answer, 
+        with each pair of numbers being evaluated at a time. For example, 12 + 7 - 5 * 3 = should yield 42
+
+*/
+
+
+// Basic math functions
 
 const add = function(...array) {
   return array.reduce((a, b) => a + b);  
@@ -21,7 +40,8 @@ const divide = function(...array) {
 
 
 
-// Step 2: Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
+
+// operate() function to take an operator and two numbers and call them on one of the basic math fuctions
 
 let operator = '';
 let num1 = '';
@@ -32,12 +52,8 @@ const operate = function(operator, num1, num2) {
 };
 
 
-//  Step 3: Create the functions that populate the display when you click the number buttons. 
-// You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+// functions to populate the display with 
 
-// Step 4: Make the calculator work! You’ll need to store the first number that is input into the calculator 
-// when a user presses an operator, and also save which operation has been chosen and then operate() on 
-// them when the user presses the “=” key.
 
 let displayValue = 0;
 
@@ -50,7 +66,6 @@ buttons.forEach((button) => {
   
     if (operator == '') {
       num1 += button.id;
-      console.log(num1)
       input.innerHTML = num1;
       displayValue = num1;
     } else {
